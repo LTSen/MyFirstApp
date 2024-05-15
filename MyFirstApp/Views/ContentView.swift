@@ -4,7 +4,6 @@
 //
 //  Created by Long Sen on 3/10/24.
 //
-// TEst
 
 import SwiftUI
 
@@ -29,18 +28,6 @@ struct ContentView: View {
                         }
                     }
                 })
-                .background(.gray.opacity(0.35))
-                .environment(viewModel)
-        }
-    }
-    
-    var mainView: some View {
-        ZStack {
-            ScrollView(.vertical, showsIndicators: false) {
-                ForEach(viewModel.todoList, id: \.0) { section in
-                    sectionView(sectionTitle: section.0, items: section.1)
-                }
-                .padding(10)
                 .toolbar {
                     ToolbarItem(placement: .primaryAction) {
                         Menu {
@@ -52,25 +39,35 @@ struct ContentView: View {
                         }
                     }
                 }
-            }
+                .background(.gray.opacity(0.35))
+                .environment(viewModel)
+        }
+    }
+    
+    var mainView: some View {
+        ZStack {
+                ScrollView(.vertical, showsIndicators: false) {
+                    Grid(gridColumns: 2, items: viewModel.todoList, id: \.0) { section in
+                        sectionView(sectionTitle: section.0, items: section.1)
+                    }
+                    .padding()
+                }
             addButton
                 .position(x: screenWidth - 70, y: screenHeight - 180)
         }
     }
     
     private func sectionView(sectionTitle: String, items: [Todo]) -> some View {
-            ZStack(alignment:.leading) {
-                CustomProgressView(isFinished: viewModel.isSectionFinished(subsection: sectionTitle), isCornerRadius: true)
-                VStack(alignment: .leading, spacing: 0) {
-                    Text(sectionTitle)
-                        .padding([.leading, .trailing])
-                    ForEach(items) { item in
-                        RowView(todo: item)
-                    }
-                }
-                .padding([.top, .bottom])
+        VStack(alignment: .leading, spacing: 0) {
+            Text(sectionTitle)
+                .padding([.leading, .trailing])
+            ForEach(items) { item in
+                RowView(todo: item)
             }
         }
+        .padding([.top, .bottom])
+        .addProgessView(isFinished: viewModel.isSectionFinished(subsection: sectionTitle), isCornerRadius: true)
+    }
     
     private var groupMenu: some View {
         Menu {

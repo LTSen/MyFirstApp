@@ -19,7 +19,7 @@ class ViewModel{
     var groceriesStore = [GroceryStore(storeName: "Walmart"), GroceryStore(storeName: "Kroger"), GroceryStore(storeName: "Costco"), GroceryStore(storeName: "Sam's club"), GroceryStore(storeName: "The Home Depot")]
 //    private let locationService = LocationService()
     
-    var section: Section = .None {
+    var section: Section = .Completed {
         didSet {
             updateTodoList()
         }

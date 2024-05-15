@@ -7,30 +7,38 @@
 
 import SwiftUI
 
-struct CustomProgressView: View {
+struct CustomProgressView: ViewModifier {
+    
     var isFinished: Bool
     var isCornerRadius: Bool = false
     
-    var body: some View {
-        GeometryReader { geometry in
-            VStack {
-                ZStack(alignment: .leading) {
-                    RoundedRectangle(cornerRadius: isCornerRadius ? 10: 0)
-                        .frame(width: geometry.size.width, height: geometry.size.height)
-//                        .frame(width: size.width, height: size.height)
-
-                        .foregroundColor(.white)
-                    RoundedRectangle(cornerRadius: isCornerRadius ? 10: 0)
-                        .frame(width: isFinished ? geometry.size.width : 0, height: geometry.size.height)
-//                        .frame(width: isFinished ? size.width : 0, height: size.height)
-
-                        .foregroundColor(isFinished ? .green.opacity(0.3) : .white)
+    func body(content: Content) -> some View {
+        ZStack(alignment: .leading) {
+            GeometryReader { geometry in
+                VStack {
+                    ZStack(alignment: .leading) {
+                        RoundedRectangle(cornerRadius: isCornerRadius ? 10: 0)
+                            .foregroundColor(.white)
+                        RoundedRectangle(cornerRadius: isCornerRadius ? 10: 0)
+                            .frame(width: isFinished ? geometry.size.width : 0)
+                            .foregroundColor(isFinished ? .green.opacity(0.3) : .white)
+                    }
                 }
             }
+            content
         }
     }
 }
 
+extension View {
+    func addProgessView(isFinished: Bool, isCornerRadius: Bool = false) -> some View {
+        self.modifier(CustomProgressView(isFinished: isFinished, isCornerRadius: isCornerRadius))
+    }
+}
+
+
+
 #Preview {
-    CustomProgressView(isFinished: true)
+    Text("Hello")
+    .addProgessView(isFinished: true, isCornerRadius: true)
 }

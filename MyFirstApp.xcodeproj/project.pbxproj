@@ -18,6 +18,8 @@
 		9707C6312BA29EBD00249A96 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9707C6302BA29EBD00249A96 /* RowView.swift */; };
 		9707C6332BA2A05E00249A96 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9707C6322BA2A05E00249A96 /* Todo.swift */; };
 		9707C6352BA2ADE200249A96 /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9707C6342BA2ADE200249A96 /* CustomProgressView.swift */; };
+		97566A6F2BF1AA2B00FADF8D /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97566A6E2BF1AA2B00FADF8D /* GridLayout.swift */; };
+		97566A712BF1C10D00FADF8D /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97566A702BF1C10D00FADF8D /* Grid.swift */; };
 		9764A7642BE487E4004B6952 /* NewToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9764A7632BE487E4004B6952 /* NewToDoView.swift */; };
 		9764A7802BE5E2F4004B6952 /* CustomListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9764A77F2BE5E2F4004B6952 /* CustomListView.swift */; };
 		9764A7822BE72E76004B6952 /* PriorityRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9764A7812BE72E76004B6952 /* PriorityRowView.swift */; };
@@ -40,6 +42,8 @@
 		9707C6302BA29EBD00249A96 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 		9707C6322BA2A05E00249A96 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		9707C6342BA2ADE200249A96 /* CustomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
+		97566A6E2BF1AA2B00FADF8D /* GridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
+		97566A702BF1C10D00FADF8D /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		9764A7632BE487E4004B6952 /* NewToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToDoView.swift; sourceTree = "<group>"; };
 		9764A77F2BE5E2F4004B6952 /* CustomListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListView.swift; sourceTree = "<group>"; };
 		9764A7812BE72E76004B6952 /* PriorityRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityRowView.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 				9764A7812BE72E76004B6952 /* PriorityRowView.swift */,
 				9785293F2BE89CA00035526D /* LocationRowView.swift */,
 				978529412BE939910035526D /* GroceriesView.swift */,
+				97566A6E2BF1AA2B00FADF8D /* GridLayout.swift */,
+				97566A702BF1C10D00FADF8D /* Grid.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -215,10 +221,12 @@
 				9707C62E2BA292F400249A96 /* LocationService.swift in Sources */,
 				978529442BE96E100035526D /* GroceryStore.swift in Sources */,
 				9764A7802BE5E2F4004B6952 /* CustomListView.swift in Sources */,
+				97566A712BF1C10D00FADF8D /* Grid.swift in Sources */,
 				9707C6152B9EA76C00249A96 /* ContentView.swift in Sources */,
 				9707C6132B9EA76C00249A96 /* MyFirstAppApp.swift in Sources */,
 				978529462BE977920035526D /* NewTodoViewModel.swift in Sources */,
 				9764A7822BE72E76004B6952 /* PriorityRowView.swift in Sources */,
+				97566A6F2BF1AA2B00FADF8D /* GridLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,14 +12,11 @@ struct RowView: View {
     var todo: Todo
     
     var body: some View {
-            ZStack(alignment: .leading) {
-                CustomProgressView(isFinished: todo.isFinished)
                 HStack {
                     checkBoxView(isFinished: todo.isFinished)
                     todoView(todo: todo)
                 }
-                .frame(height: 35)
-            }
+                .addProgessView(isFinished: todo.isFinished)
     }
     
     private func todoView(todo: Todo) -> some View {
